@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F7226D5D-1D02-4BB6-90DF-3D8FE4DCEAE5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ReversiLab</RootNamespace>
+    <AssemblyName>ReversiLab</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="QuickGraph">
+      <HintPath>packages\QuickGraph.3.6.61119.7\lib\net4\QuickGraph.dll</HintPath>
+    </Reference>
+    <Reference Include="QuickGraph.Data">
+      <HintPath>packages\QuickGraph.3.6.61119.7\lib\net4\QuickGraph.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="QuickGraph.Graphviz">
+      <HintPath>packages\QuickGraph.3.6.61119.7\lib\net4\QuickGraph.Graphviz.dll</HintPath>
+    </Reference>
+    <Reference Include="QuickGraph.Serialization">
+      <HintPath>packages\QuickGraph.3.6.61119.7\lib\net4\QuickGraph.Serialization.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AI\AlwaysFirstStrategy.cs" />
+    <Compile Include="AI\DynamicMinMaxStrategy.cs" />
+    <Compile Include="AI\IBoardStateEvaluator.cs" />
+    <Compile Include="AI\IReversiStrategy.cs" />
+    <Compile Include="AI\MaksimumDiskStrategy.cs" />
+    <Compile Include="AI\MinMaxStrategy.cs" />
+    <Compile Include="AI\PositionEvaluator.cs" />
+    <Compile Include="AI\RandomStrategy.cs" />
+    <Compile Include="AI\ReversiPlayerFactory.cs" />
+    <Compile Include="AI\ScoreAndCornersEvaluator.cs" />
+    <Compile Include="AI\ScoreEvaluator.cs" />
+    <Compile Include="Class1.cs" />
+    <Compile Include="Exceptions\AlreadyStartedException.cs" />
+    <Compile Include="Exceptions\IllegalMoveException.cs" />
+    <Compile Include="Exceptions\NotStartedException.cs" />
+    <Compile Include="Exceptions\WrongOrderException.cs" />
+    <Compile Include="Graph\GameNode.cs" />
+    <Compile Include="Graph\MinMax.cs" />
+    <Compile Include="Play\Arena.cs" />
+    <Compile Include="Play\ConsoleLogger.cs" />
+    <Compile Include="Play\Logger.cs" />
+    <Compile Include="Play\ReversiPlayer.cs" />
+    <Compile Include="Play\Verbosity.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rules\Game.cs" />
+    <Compile Include="Rules\GameService.cs" />
+    <Compile Include="Rules\Path.cs" />
+    <Compile Include="Rules\Position.cs" />
+    <Compile Include="Stats\FightResult.cs" />
+    <Compile Include="Stats\GameResult.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
