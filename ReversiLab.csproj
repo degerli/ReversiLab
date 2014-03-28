@@ -62,7 +62,6 @@
     <Compile Include="AI\ReversiPlayerFactory.cs" />
     <Compile Include="AI\ScoreAndCornersEvaluator.cs" />
     <Compile Include="AI\ScoreEvaluator.cs" />
-    <Compile Include="Class1.cs" />
     <Compile Include="Exceptions\AlreadyStartedException.cs" />
     <Compile Include="Exceptions\IllegalMoveException.cs" />
     <Compile Include="Exceptions\NotStartedException.cs" />

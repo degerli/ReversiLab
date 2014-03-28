@@ -42,8 +42,6 @@ namespace ReversiLab.AI
             
             return false;
         }
-        
-
 
         private int EvaluateCorners(IEnumerable<List<int>> boardState, int player)
         {

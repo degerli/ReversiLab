@@ -4,6 +4,9 @@ using ReversiLab.Rules;
 
 namespace ReversiLab.AI
 {
+    /// <summary>
+    /// Chooses a move in available moves randomly
+    /// </summary>
     internal class RandomStrategy : IReversiStrategy
     {
         private readonly Random _random;
